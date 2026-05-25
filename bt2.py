@@ -1,0 +1,22 @@
+transaction = "  nguyEN vAn a | PYTHON-01 | 15000000 | paid  "
+
+# strip không đổi trực tiếp chuỗi vì string là immutable
+transaction.strip()
+
+# split sai dấu phân tách Dữ liệu đúng phải tách bằng "|"
+parts = transaction.split("-")
+
+#  dữ liệu bị lệch sau khi split sai  và còn khoảng trắng dư
+transaction = transaction.strip()
+
+parts = transaction.split("|")
+
+student_name = parts[0].strip().title()
+course_code = parts[1].strip()
+amount = int(parts[2].strip())
+status = parts[3].strip().upper()
+
+print("Học viên:", student_name)
+print("Khóa học:", course_code)
+print("Số tiền:", f"{amount:,} VND")
+print("Trạng thái:", status)
